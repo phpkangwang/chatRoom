@@ -28,6 +28,7 @@ class User_Model extends CI_Model
     function regist($post)
     {
         $table = "user";
+        $post['created_at'] = time();
         if($this->db->insert($table, $post)){
              $id = $this->db->insert_id();
              $result = $this->db->from($table)->where('id =', $id)->get()->row_array();

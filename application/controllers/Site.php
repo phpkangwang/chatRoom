@@ -34,8 +34,8 @@ class Site extends My_Controller {
 	       $this->message = "账号或密码错误";
 	       $this->sendJson();
 	   }else{
-	       $_COOKIE['id'] = $userObj['id'];
-	       $_COOKIE['username'] = $userObj['username'];
+	       $_SESSION['chatRoom']['id'] = $userObj['id'];
+	       $_SESSION['chatRoom']['nickname'] = $userObj['nickname'];
 	       $this->code = 1;
 	       $this->sendJson();
 	   }
@@ -64,8 +64,8 @@ class Site extends My_Controller {
 	        $this->message = "注册失败";
 	        $this->sendJson();
 	    }else{
-	        $_COOKIE['id'] = $userObj['id'];
-	        $_COOKIE['username'] = $userObj['username'];
+	        $_SESSION['chatRoom']['id'] = $userObj['id'];
+	        $_SESSION['chatRoom']['nickname'] = $userObj['nickname'];
 	        $this->code = 1;
 	        $this->sendJson();
 	    }
@@ -75,6 +75,9 @@ class Site extends My_Controller {
 	//渲染聊天室首页
 	public function chatRoom()
 	{
+	    $this->checkLogin();
 	    $this->load->view('chat/room');
 	}
+	
+
 }

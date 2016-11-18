@@ -13,8 +13,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<h1>登录</h1>
 
 	<div id="body">
+	     <label>用户名:</label>
 	     <input type="text" id="username" name="username">
 	     </br>
+	     <label>密码:</label>
 	     <input type="password" id="password" name="password"> 
 	     <input type="button" id="login" value="登录">
 	     <a href="<?php echo base_url('site/regist')?>">注册</a>
@@ -39,6 +41,7 @@ $('#login').click(function(){
         if(res.code == 1)
         {
       	    alert("登录成功");
+        	window.location.href="<?php echo base_url('site/chatRoom')?>";
             return true;
         }
         else

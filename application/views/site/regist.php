@@ -13,9 +13,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<h1>注册</h1>
 
 	<div id="body">
+	     <label>用户名:</label>
 	     <input type="text" id="username" name="username">
 	     </br>
-	     <input type="password" id="password" name="password"> 
+	     <label>密码:</label>
+	     <input type="password" id="password" name="password">
+	     </br>
+	     <label>昵称:</label>
+	     <input type="text" id="nickname" name="nickname">  
 	     <input type="button" id="regist" value="注册">
 	     <a href="<?php echo base_url('site/index')?>">登录</a>
 	</div>
@@ -29,6 +34,7 @@ $('#regist').click(function(){
     data = {};
     data.username = $("#username").val();
     data.password = $("#password").val();
+    data.nickname = $("#nickname").val();
     $.ajax({
       type: 'post',
       dataType: 'json',
@@ -38,6 +44,7 @@ $('#regist').click(function(){
         if(res.code == 1)
         {
       	    alert("注册成功");
+        	window.location.href="<?php echo base_url('site/chatRoom')?>";
             return true;
         }
         else

@@ -32,6 +32,13 @@ class My_Controller extends CI_Controller
         return ;
     }
     
+    public function checkLogin()
+    {
+        if(!isset($_SESSION['chatRoom']['id'])){
+            redirect('/site/index/', 'refresh');
+        }
+    }
+    
 }
 
 

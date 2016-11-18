@@ -34,6 +34,7 @@
 
     function song(){
        var text = document.getElementById('text').value;
+       text = "<?php echo isset($_SESSION['chatRoom']['nickname']) ? $_SESSION['chatRoom']['nickname'] : "无名氏  "?>说:"+text;
        document.getElementById('text').value = '';
        // 向服务器发送数据
        websocket.send(text);
