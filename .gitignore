@@ -2,7 +2,7 @@
 
 .buildpath
 .project
-/.settings/
+.settings
 
 application/cache/*
 !application/cache/index.html
