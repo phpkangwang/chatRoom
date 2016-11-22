@@ -1,5 +1,9 @@
 .DS_Store
 
+.buildpath
+.project
+.settings
+
 application/cache/*
 !application/cache/index.html
 !application/cache/.htaccess
@@ -25,3 +29,4 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 *.stTheme.cache
 *.sublime-workspace
 *.sublime-project
+ 
